@@ -99,3 +99,68 @@ exercice_two_button.addEventListener("click", (e) => {
  */
 
 var exercice_tree_heigth = document.getElementById('exercice-tree-heigth');
+var exercice_tree_wight = document.getElementById('exercice-tree-wight');
+var exercice_tree_radio_male = document.getElementById('exercice-tree-male');
+var exercice_tree_radio_female = document.getElementById('exercice-tree-female');
+var exercice_tree_validation = document.getElementById('exercice-tree-validation');
+var exercice_tree_response = document.getElementById('exercice-tree-response');
+var exercice_tree_button = document.getElementById('exercice-tree-button');
+
+function validation() {
+    if (!(exercice_tree_radio_female.checked || exercice_tree_radio_male.checked)) {
+        return -1
+    }
+
+    if (!(exercice_tree_heigth.value != "" || exercice_tree_wight != "")) {
+        return 0
+    }
+
+    return 1
+}
+
+exercice_tree_button.addEventListener('click', (e) => {
+    let result = validation();
+
+    switch (result) {
+        case -1:
+            exercice_tree_validation.innerText = "Selecione o sexo";
+            exercice_tree_validation.className = "span-danger";
+            break;
+        case 0:
+            exercice_tree_validation.innerText = "Insira o seu peso e altura";
+            exercice_tree_validation.className = "span-danger";
+            break;
+        case 1:
+            exercice_one_validation.innerText = "";
+            break;
+    }
+
+    let imc = Number(exercice_tree_wight.value) / (Number(exercice_tree_heigth.value) * Number(exercice_tree_heigth.value))
+
+    if (result != 1) {
+        return;
+    }
+
+    if (exercice_tree_radio_female.checked) {
+        if (imc < 19) {
+            exercice_tree_response.innerText = "Abaixo do ideal";
+
+        } else if (imc >= 19 && imc <= 25.8) {
+            exercice_tree_response.innerText = "Peso ideal";
+
+        } else if (imc > 25.8) {
+            exercice_tree_response.innerText = "Acima do peso ideal";
+        }
+    } else {
+        if (imc < 20.7) {
+            exercice_tree_response.innerText = "Abaixo do ideal";
+
+        } else if (imc >= 20.7 && imc <= 26.4) {
+            exercice_tree_response.innerText = "Peso ideal";
+
+        } else if (imc > 26.4) {
+            exercice_tree_response.innerText = "Acima do peso ideal";
+        }
+    }
+
+})
