@@ -62,8 +62,8 @@ exercise_two_input.addEventListener("keyup", (e) => {
     var data_splited = value.split("/")
 
     if (data_splited.length > 2) {
-
-        var date = new Date(`${data_splited[2]}/${data_splited[1]}/${data_splited[0]}`)
+        console.log(data_splited[0])
+        var date = new Date(`${data_splited[2]} ${data_splited[1]} ${data_splited[0]}`)
 
         if (isNaN(date.getTime())) {
             exercise_two_validation.innerText = "A data inserida é inválida."
@@ -71,7 +71,7 @@ exercise_two_input.addEventListener("keyup", (e) => {
             return;
         }
         exercise_two_validation.innerText = ""
-        exercise_two_response.innerText = `${date.getDay()} de ${month[date.getMonth()]} de ${date.getFullYear()}`;
+        exercise_two_response.innerText = `${date.getDate()} de ${month[date.getMonth()]} de ${date.getFullYear()}`;
     }
 
 })
