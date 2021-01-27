@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Lista de Exercicio 02</title>
+</head>
+
+<body>
+    <header>
+        <h1>
+            Lista de Exercicio 02
+        </h1>
+    </header>
+    <section>
+        <h2>
+            Exercicio 01
+        </h2>
+        <p>Insira um número entre 100 e 300 <span id="exercice-one-validation"></span></p>
+        <input class="form-control" type="number" min="100" max="300" placeholder="Insira um número:" id="exercice-one-input" required />
+        <button id="exercice-one-button" class="btn btn-primary">
+            Validar
+        </button>
+    </section>
+    <section>
+        <h2>
+            Exercicio 02
+        </h2>
+        <p>Insira uma data qualquer(dd/mm/yyyy) <span id="exercice-two-validation"></span></p>
+        <p id="exercice-two-response"></p>
+        <input class="form-control" type="text" placeholder="Insira uma data:" id="exercice-two-input" required />
+        <button id="exercice-two-button" class="btn btn-primary">
+            Validar
+        </button>
+    </section>
+    <section>
+        <h2>
+            Exercicio 03
+        </h2>
+        <p>Preencha os dados abaixo corretamente: <span id="exercice-two-validation"></span></p>
+        <p id="exercice-two-response"></p>
+        <input type="radio" id="male" name="gender" value="male" checked>
+        <label for="male">Homem</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Mulher</label><br>
+        <input type="number" class="form-control" id="exercice-tree-heigth" placeholder="Insira a sua altura: " required>
+        <input type="number" class="form-control" id="exercice-tree-wight" placeholder="Insira o seu peso: " required>
+        <button class="btn btn-primary" id="exercice-tree-button">
+            Calcular
+        </button>
+    </section>
+    <section id="youtube-detail">
+
+    </section>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
